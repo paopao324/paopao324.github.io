@@ -1,5 +1,6 @@
 {
     "title":"AI Agent学习笔记",
+    "customHead":"<script src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"></script>",
     "subTitle":"AI Agent 学习笔记 & 思考沉淀，在迭代中精进，与开发者共勉。",
     "avatarUrl":"https://avatars.githubusercontent.com/u/227831811?v=4&size=64",
     "GMEEK_VERSION":"last"
