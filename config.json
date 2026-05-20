@@ -1,6 +1,5 @@
 {
     "title":"AI Agent学习笔记",
-    "customHead":"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js\"></script><script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js\" onload=\"renderMathInElement(document.body);\"></script>",
     "subTitle":"AI Agent 学习笔记 & 思考沉淀，在迭代中精进，与开发者共勉。",
     "avatarUrl":"https://avatars.githubusercontent.com/u/227831811?v=4&size=64",
     "GMEEK_VERSION":"last"
