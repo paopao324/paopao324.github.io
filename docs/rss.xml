@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>AI Agent学习笔记</title><link>https://paopao324.github.io</link><description>AI Agent 学习笔记 &amp; 思考沉淀，在迭代中精进，与开发者共勉。</description><copyright>AI Agent学习笔记</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/227831811?v=4&amp;size=64</url><title>avatar</title><link>https://paopao324.github.io</link></image><lastBuildDate>Wed, 20 May 2026 14:28:29 +0000</lastBuildDate><managingEditor>AI Agent学习笔记</managingEditor><ttl>60</ttl><webMaster>AI Agent学习笔记</webMaster><item><title>大语言模型基础</title><link>https://paopao324.github.io/post/da-yu-yan-mo-xing-ji-chu.html</link><description># 3.1 语言模型与 Transformer 架构
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>AI Agent学习笔记</title><link>https://paopao324.github.io</link><description>AI Agent 学习笔记 &amp; 思考沉淀，在迭代中精进，与开发者共勉。</description><copyright>AI Agent学习笔记</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/227831811?v=4&amp;size=64</url><title>avatar</title><link>https://paopao324.github.io</link></image><lastBuildDate>Thu, 21 May 2026 13:38:04 +0000</lastBuildDate><managingEditor>AI Agent学习笔记</managingEditor><ttl>60</ttl><webMaster>AI Agent学习笔记</webMaster><item><title>与大语言模型交互</title><link>https://paopao324.github.io/post/yu-da-yu-yan-mo-xing-jiao-hu.html</link><description>
+# 3.2 与大语言模型交互
+## 3.2.1 提示工程（Prompt Engineering）
+### （1）模型采样参数
+控制模型输出的**随机性、确定性、多样性**，直接影响生成效果，核心参数如下：
+
+| 参数 | 作用 | 取值影响 | 经典取值 | 极端情况 |
+| :--- | :--- | :--- | :--- | :--- |
+| **Temperature（温度）** | 控制输出随机性，调整概率分布陡峭程度 | - 越大：输出越发散、有创意&lt;br&gt;- 越小：输出越保守、精准 | 0.3-1.0&lt;br&gt;（创意：0.7-1.0；严谨：0.1-0.3） | - $T \to 0$：输出完全确定（选概率最高Token）&lt;br&gt;- $T=1$：标准概率分布 |
+| **Top-k** | 固定保留前 $k$ 个高概率Token，限制候选范围 | - 越小：输出越保守&lt;br&gt;- 越大：输出越多样 | 20 / 40 / 50 | - $k=1$：贪心采样（仅选最高概率）&lt;br&gt;- $k \to \infty$：无截断，全候选 |
+| **Top-p（核采样）** | 动态筛选累积概率≥$p$的最小Token集合 | 同 Top-k，自适应概率分布 | 0.7 / 0.8 / 0.9 | - $p=1$：无截断&lt;br&gt;- $p \to 0$：等价贪心采样 |
+
+#### 参数优先级
+**Temperature → Top-k → Top-p**
+- 先通过 Temperature 调整整体概率分布
+- 再用 Top-k/Top-p 筛选候选Token
+- 通常 Top-k 与 Top-p **二选一**，同时设置时取两者交集
+
+### （2）Zero-shot 学习（零样本学习）
+- **核心定义**：模型利用预训练阶段学到的通用知识，**无需额外样本（数据+标签）**，直接完成陌生新任务。</description><guid isPermaLink="true">https://paopao324.github.io/post/yu-da-yu-yan-mo-xing-jiao-hu.html</guid><pubDate>Thu, 21 May 2026 13:37:36 +0000</pubDate></item><item><title>大语言模型基础</title><link>https://paopao324.github.io/post/da-yu-yan-mo-xing-ji-chu.html</link><description># 3.1 语言模型与 Transformer 架构
 
 ## 3.1.1 从 N-gram 到 RNN
 
